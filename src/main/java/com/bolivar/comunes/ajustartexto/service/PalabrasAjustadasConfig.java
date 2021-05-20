@@ -1,4 +1,4 @@
-package com.bolivar.comunes.casing.service;
+package com.bolivar.comunes.ajustartexto.service;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

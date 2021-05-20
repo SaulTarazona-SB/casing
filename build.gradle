@@ -35,7 +35,7 @@ task genJaxb {
 			mkdir(dir: classesDir)
 
 			xjc(destdir: sourcesDir, schema: schema,
-					package: "com.bolivar.comunes.casing.consumingwebservice.wsdl") {
+					package: "com.bolivar.comunes.ajustartexto.consumingwebservice.wsdl") {
 				arg(value: "-wsdl")
 				produces(dir: sourcesDir, includes: "**/*.java")
 			}
@@ -59,6 +59,7 @@ task genJaxb {
 // end::wsdl[]
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation ('org.springframework.boot:spring-boot-starter-web-services'){
 		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'

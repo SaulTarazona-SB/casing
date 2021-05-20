@@ -1,4 +1,4 @@
-package com.bolivar.comunes.casing;
+package com.bolivar.comunes.ajustartexto;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

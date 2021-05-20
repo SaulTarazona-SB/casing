@@ -1,7 +1,7 @@
-package com.bolivar.comunes.casing.service;
+package com.bolivar.comunes.ajustartexto.service;
 
 import com.bolivar.comunes.casing.consumingwebservice.wsdl.*;
-import com.bolivar.comunes.casing.models.ObtenerpalabraajustadaResponse;
+import com.bolivar.comunes.ajustartexto.models.PalabraajustadaResponse;
 import org.springframework.context.annotation.Primary;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 
@@ -11,9 +11,9 @@ public class PalabrasAjustadasService extends WebServiceGatewaySupport {
     private static final String ENDPOINT = "https://www.dataaccess.com/webservicesserver/TextCasing.wso?wsdl";
     private final ObjectFactory of = new ObjectFactory();
 
-    public ObtenerpalabraajustadaResponse ajustarTexto1MayusculaDemasMinuscula(String palabra, String token) {
+    public PalabraajustadaResponse ajustarTextoPrimeraPalabraMayusculaDemasMinuscula(String palabra, String token) {
 
-        ObtenerpalabraajustadaResponse resultado = new ObtenerpalabraajustadaResponse();
+        PalabraajustadaResponse resultado = new PalabraajustadaResponse();
         TitleCaseWordsWithToken texto = of.createTitleCaseWordsWithToken();
         texto.setSText(palabra);
         texto.setSToken(token);
@@ -25,9 +25,9 @@ public class PalabrasAjustadasService extends WebServiceGatewaySupport {
         return resultado;
     }
 
-    public ObtenerpalabraajustadaResponse intercalarMayusculasMinusculas(String palabra) {
+    public PalabraajustadaResponse intercalarMayusculasMinusculas(String palabra) {
 
-        ObtenerpalabraajustadaResponse resultado = new ObtenerpalabraajustadaResponse();
+        PalabraajustadaResponse resultado = new PalabraajustadaResponse();
         InvertStringCase texto = of.createInvertStringCase();
         texto.setSAString(palabra);
 
@@ -38,9 +38,9 @@ public class PalabrasAjustadasService extends WebServiceGatewaySupport {
         return resultado;
     }
 
-    public ObtenerpalabraajustadaResponse cambiarLetra1DemasDiferenteALetra1(String palabra) {
+    public PalabraajustadaResponse cambiarPrimeraLetraDemasDiferenteAPrimeraLetra(String palabra) {
 
-        ObtenerpalabraajustadaResponse resultado = new ObtenerpalabraajustadaResponse();
+        PalabraajustadaResponse resultado = new PalabraajustadaResponse();
         InvertCaseFirstAdjustStringToPrevious texto = of.createInvertCaseFirstAdjustStringToPrevious();
         texto.setSAString(palabra);
 
@@ -51,9 +51,9 @@ public class PalabrasAjustadasService extends WebServiceGatewaySupport {
         return resultado;
     }
 
-    public ObtenerpalabraajustadaResponse cambiarLetra1DemasIgualALetra1(String palabra) {
+    public PalabraajustadaResponse cambiarPrimeraLetraDemasIgualAPrimeraLetra(String palabra) {
 
-        ObtenerpalabraajustadaResponse resultado = new ObtenerpalabraajustadaResponse();
+        PalabraajustadaResponse resultado = new PalabraajustadaResponse();
         InvertCaseFirstAdjustStringToCurrent texto = of.createInvertCaseFirstAdjustStringToCurrent();
         texto.setSAString(palabra);
 
@@ -64,9 +64,9 @@ public class PalabrasAjustadasService extends WebServiceGatewaySupport {
         return resultado;
     }
 
-    public ObtenerpalabraajustadaResponse cambiarTodoMayusculasTokenEntreLetras(String palabra, String token) {
+    public PalabraajustadaResponse cambiarTodoMayusculasTokenEntreLetras(String palabra, String token) {
 
-        ObtenerpalabraajustadaResponse resultado = new ObtenerpalabraajustadaResponse();
+        PalabraajustadaResponse resultado = new PalabraajustadaResponse();
         AllUppercaseWithToken texto = of.createAllUppercaseWithToken();
         texto.setSAString(palabra);
         texto.setSToken(token);
@@ -78,9 +78,9 @@ public class PalabrasAjustadasService extends WebServiceGatewaySupport {
         return resultado;
     }
 
-    public ObtenerpalabraajustadaResponse cambiarTodoMinusculasTokenEntreLetras(String palabra, String token) {
+    public PalabraajustadaResponse cambiarTodoMinusculasTokenEntreLetras(String palabra, String token) {
 
-        ObtenerpalabraajustadaResponse resultado = new ObtenerpalabraajustadaResponse();
+        PalabraajustadaResponse resultado = new PalabraajustadaResponse();
         AllLowercaseWithToken texto = of.createAllLowercaseWithToken();
         texto.setSAString(palabra);
         texto.setSToken(token);
@@ -92,9 +92,9 @@ public class PalabrasAjustadasService extends WebServiceGatewaySupport {
         return resultado;
     }
 
-    public ObtenerpalabraajustadaResponse cambiarTodoMayusculasTokenEntrePalabras(String palabra, String token) {
+    public PalabraajustadaResponse cambiarTodoMayusculasTokenEntrePalabras(String palabra, String token) {
 
-        ObtenerpalabraajustadaResponse resultado = new ObtenerpalabraajustadaResponse();
+        PalabraajustadaResponse resultado = new PalabraajustadaResponse();
         UppercaseWordsWithToken texto = of.createUppercaseWordsWithToken();
         texto.setSAString(palabra);
         texto.setSToken(token);
@@ -106,9 +106,9 @@ public class PalabrasAjustadasService extends WebServiceGatewaySupport {
         return resultado;
     }
 
-    public ObtenerpalabraajustadaResponse cambiarTodoMinusculasTokenEntrePalabras(String palabra, String token) {
+    public PalabraajustadaResponse cambiarTodoMinusculasTokenEntrePalabras(String palabra, String token) {
 
-        ObtenerpalabraajustadaResponse resultado = new ObtenerpalabraajustadaResponse();
+        PalabraajustadaResponse resultado = new PalabraajustadaResponse();
         LowercaseWordsWithToken texto = of.createLowercaseWordsWithToken();
         texto.setSAString(palabra);
         texto.setSToken(token);
