@@ -11,15 +11,15 @@ info:
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
   version: "1.0.0"
 servers:
-  - url: http://localhost:8080/api/v1/servicioPalabras
+  - url: http://localhost:8080/ajustartexto/api/v1/dataaccess
     description: Servidor de Desarrollo no HTTPS
 paths:
-  /textoAjustado/primerLetraPalabraMayusculaDemasMinusculasConToken:
+  /primerLetraPalabraMayusculaDemasMinusculas/conToken:
     post:
       tags:
         - palabras
       summary: Ajusta el texto modificando la primera letra de cada palabra y los espacios
-      operationId: ajustarTextoPrimeraPalabraMayusculaDemasMinuscula
+      operationId: modificarTextoPrimeraPalabraMayusculaDemasMinuscula
       description: Ajusta el texto modificando la primera letra de cada palabra en mayúscula, y cambiando los espacios entre palabras por el valor del token indicado
       parameters:
         - in: query
@@ -59,12 +59,12 @@ paths:
                 items:
                   $ref: '#/components/schemas/ObtenerpalabraajustadaResponse'
       x-codegen-request-body-name: body
-  /textoAjustado/inversionMayusculasMinusculas:
+  /inversionMayusculasMinusculas:
     post:
       tags:
         - palabras
       summary: Ajusta el texto cambiando mayúsculas por minúsculas
-      operationId: intercalarMayusculasMinusculas
+      operationId: modificarMayusculasMinusculas
       description: Ajusta el texto modificando las letras en mayúscula por minúscula, y viceversa
       parameters:
         - in: query
@@ -99,12 +99,12 @@ paths:
                 items:
                   $ref: '#/components/schemas/ObtenerpalabraajustadaResponse'
       x-codegen-request-body-name: body
-  /textoAjustado/inversionPrimeraLetraDemasDiferentes:
+  /inversionPrimeraLetraDemasDiferentes:
     post:
       tags:
         - palabras
       summary: Ajusta el texto modificando la primera letra de cada palabra
-      operationId: cambiarPrimeraLetraDemasDiferenteAPrimeraLetra
+      operationId: modificarPrimeraLetraDemasDiferenteAPrimeraLetra
       description: Ajusta el texto modificando la primera letra de cada palabra, pasándola de mayúscula a minúscula o viceversa, y las demás letras de la palabras serán minúsculas si su primera letra es mayúscula, o viceversa
       parameters:
         - in: query
@@ -139,12 +139,12 @@ paths:
                 items:
                   $ref: '#/components/schemas/ObtenerpalabraajustadaResponse'
       x-codegen-request-body-name: body
-  /textoAjustado/inversionPrimeraLetraDemasIguales:
+  /inversionPrimeraLetraDemasIguales:
     post:
       tags:
         - palabras
       summary: Ajusta el texto modificando la primera letra de cada palabra
-      operationId: cambiarPrimeraLetraDemasIgualAPrimeraLetra
+      operationId: modificarPrimeraLetraDemasIgualAPrimeraLetra
       description: Ajusta el texto modificando la primera letra de cada palabra, pasándola de mayúscula a minúscula o viceversa, y las demás letras de la palabras serán de la misma tipología de la primera letra
       parameters:
         - in: query
@@ -179,12 +179,12 @@ paths:
                 items:
                   $ref: '#/components/schemas/ObtenerpalabraajustadaResponse'
       x-codegen-request-body-name: body
-  /textoAjustado/todoMayusculasTokenEntreLetras:
+  /todoMayusculasTokenEntreLetras/conToken:
     post:
       tags:
         - palabras
       summary: Ajusta el texto modificando todas las letras a mayúsculas
-      operationId: cambiarTodoMayusculasTokenEntreLetras
+      operationId: modificarTodoMayusculasTokenEntreLetras
       description: Ajusta el texto modificando todas las letras a mayúsculas, y entre cada letra escribe el valor del token ingresado
       parameters:
         - in: query
@@ -224,12 +224,12 @@ paths:
                 items:
                   $ref: '#/components/schemas/ObtenerpalabraajustadaResponse'
       x-codegen-request-body-name: body
-  /textoAjustado/todoMinusuculasTokenEntreLetras:
+  /todoMinusuculasTokenEntreLetras/conToken:
     post:
       tags:
         - palabras
       summary: Ajusta el texto modificando todas las letras a minúsculas
-      operationId: cambiarTodoMinusculasTokenEntreLetras
+      operationId: modificarTodoMinusculasTokenEntreLetras
       description: Ajusta el texto modificando todas las letras a minúsculas, y entre cada letra escribe el valor del token ingresado
       parameters:
         - in: query
@@ -269,12 +269,12 @@ paths:
                 items:
                   $ref: '#/components/schemas/ObtenerpalabraajustadaResponse'
       x-codegen-request-body-name: body
-  /textoAjustado/todoMayusculasTokenEntrePalabras:
+  /todoMayusculasTokenEntrePalabras/conToken:
     post:
       tags:
         - palabras
       summary: Ajusta el texto modificando todas las letras a mayúsculas
-      operationId: cambiarTodoMayusculasTokenEntrePalabras
+      operationId: modificarTodoMayusculasTokenEntrePalabras
       description: Ajusta el texto modificando todas las letras a mayúsculas, y entre cada palabra escribe el valor del token ingresado
       parameters:
         - in: query
@@ -314,12 +314,12 @@ paths:
                 items:
                   $ref: '#/components/schemas/ObtenerpalabraajustadaResponse'
       x-codegen-request-body-name: body
-  /textoAjustado/todoMinusculasTokenEntrePalabras:
+  /todoMinusculasTokenEntrePalabras/conToken:
     post:
       tags:
         - palabras
       summary: Ajusta el texto modificando todas las letras a minúsculas
-      operationId: cambiarTodoMinusculasTokenEntrePalabras
+      operationId: modificarTodoMinusculasTokenEntrePalabras
       description: Ajusta el texto modificando todas las letras a minúsculas, y entre cada palabra escribe el valor del token ingresado
       parameters:
         - in: query
