@@ -1,0 +1,11 @@
+server:
+  servlet:
+    context-path: /ajustartexto
+
+info:
+  status: UP
+
+management:
+  endpoints:
+    web:
+      base-path: /

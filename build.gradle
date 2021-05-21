@@ -35,7 +35,7 @@ task genJaxb {
 			mkdir(dir: classesDir)
 
 			xjc(destdir: sourcesDir, schema: schema,
-					package: "com.bolivar.comunes.ajustartexto.consumingwebservice.wsdl") {
+					package: "com.bolivar.comunes.casing.consumingwebservice.wsdl") {
 				arg(value: "-wsdl")
 				produces(dir: sourcesDir, includes: "**/*.java")
 			}
