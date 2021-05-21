@@ -14,12 +14,12 @@ servers:
   - url: http://localhost:8080/api/v1/servicioPalabras
     description: Servidor de Desarrollo no HTTPS
 paths:
-  /textoAjustado:
+  /textoAjustado/primerLetraPalabraMayusculaDemasMinusculasConToken:
     post:
       tags:
         - palabras
       summary: Ajusta el texto modificando la primera letra de cada palabra y los espacios
-      operationId: ajustarTexto1MayusculaDemasMinuscula
+      operationId: ajustarTextoPrimeraPalabraMayusculaDemasMinuscula
       description: Ajusta el texto modificando la primera letra de cada palabra en mayúscula, y cambiando los espacios entre palabras por el valor del token indicado
       parameters:
         - in: query
@@ -59,7 +59,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/ObtenerpalabraajustadaResponse'
       x-codegen-request-body-name: body
-  /invertido:
+  /textoAjustado/inversionMayusculasMinusculas:
     post:
       tags:
         - palabras
@@ -99,12 +99,12 @@ paths:
                 items:
                   $ref: '#/components/schemas/ObtenerpalabraajustadaResponse'
       x-codegen-request-body-name: body
-  /primeraLetra:
+  /textoAjustado/inversionPrimeraLetraDemasDiferentes:
     post:
       tags:
         - palabras
       summary: Ajusta el texto modificando la primera letra de cada palabra
-      operationId: cambiarLetra1DemasDiferenteALetra1
+      operationId: cambiarPrimeraLetraDemasDiferenteAPrimeraLetra
       description: Ajusta el texto modificando la primera letra de cada palabra, pasándola de mayúscula a minúscula o viceversa, y las demás letras de la palabras serán minúsculas si su primera letra es mayúscula, o viceversa
       parameters:
         - in: query
@@ -139,12 +139,12 @@ paths:
                 items:
                   $ref: '#/components/schemas/ObtenerpalabraajustadaResponse'
       x-codegen-request-body-name: body
-  /primeraLetraYTexto:
+  /textoAjustado/inversionPrimeraLetraDemasIguales:
     post:
       tags:
         - palabras
       summary: Ajusta el texto modificando la primera letra de cada palabra
-      operationId: cambiarLetra1DemasIgualALetra1
+      operationId: cambiarPrimeraLetraDemasIgualAPrimeraLetra
       description: Ajusta el texto modificando la primera letra de cada palabra, pasándola de mayúscula a minúscula o viceversa, y las demás letras de la palabras serán de la misma tipología de la primera letra
       parameters:
         - in: query
@@ -179,7 +179,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/ObtenerpalabraajustadaResponse'
       x-codegen-request-body-name: body
-  /mayusculasTokenLetras:
+  /textoAjustado/todoMayusculasTokenEntreLetras:
     post:
       tags:
         - palabras
@@ -224,7 +224,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/ObtenerpalabraajustadaResponse'
       x-codegen-request-body-name: body
-  /minusculasTokenLetras:
+  /textoAjustado/todoMinusuculasTokenEntreLetras:
     post:
       tags:
         - palabras
@@ -269,7 +269,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/ObtenerpalabraajustadaResponse'
       x-codegen-request-body-name: body
-  /mayusculasTokenPalabras:
+  /textoAjustado/todoMayusculasTokenEntrePalabras:
     post:
       tags:
         - palabras
@@ -314,7 +314,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/ObtenerpalabraajustadaResponse'
       x-codegen-request-body-name: body
-  /minusculasTokenPalabras:
+  /textoAjustado/todoMinusculasTokenEntrePalabras:
     post:
       tags:
         - palabras
